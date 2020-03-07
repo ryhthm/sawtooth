@@ -4,13 +4,13 @@
 
 #include "sawtooth.h"
 
-#define TEST0 1
-#define TEST1 1
-#define TEST2 1
-#define TEST3 1
+#define TEST0 0
+#define TEST1 0
+#define TEST2 0
+#define TEST3 0
 #define TEST4 1
 
-#define PeriodCount 100000
+#define PeriodCount 5
 int main()
 {
 	FILE* fp0 = fopen("0.pcm", "wb");
@@ -83,8 +83,8 @@ int main()
 	for (loopCount = 0; loopCount < 750 * PeriodCount; loopCount++)
 	{
 		generateSawtooth_simple(pBuf, baseBuf);
-		//fwrite(pBuf, 1, 2 * 64, fp4);
-		//fflush(fp4);
+		fwrite(pBuf, 1, 2 * 64, fp4);
+		fflush(fp4);
 	}
 	finish = clock();
 	duration = (double)((double)finish - (double)start) / CLOCKS_PER_SEC;

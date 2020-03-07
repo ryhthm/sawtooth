@@ -82,7 +82,7 @@ void generateSawtooth_opt(short *pSawtoothVlaue)
 	static int _x2=0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	static int _baseValue2 = -26764085; //26213.6 *1024;
+	static int _baseValue2 = -26842726; //26213.6 *1024;
 	int deltAmplitudeValue = 1118;//1.0922333*1024;
 	int y=0;
 	
@@ -91,7 +91,7 @@ void generateSawtooth_opt(short *pSawtoothVlaue)
 		_x2 %=48000;
 		if(!_x2)
 		{
-			_baseValue2=-26764085;
+			_baseValue2=-26842726;
 		}
 		pSawtoothVlaue[y]=(short)(_baseValue2 >>10);
 		_baseValue2 += deltAmplitudeValue;
@@ -106,7 +106,7 @@ void generateSawtooth_optimize(short *pSawtoothVlaue)
 	static int x=0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	static int baseValue = -26764085; //26213.6 *1024;
+	static int baseValue = -26842726; //26213.6 *1024;
 	int deltAmplitudeValue = 1118;//1.0922333*1024;
 	int y=0;
 	
@@ -115,7 +115,7 @@ void generateSawtooth_optimize(short *pSawtoothVlaue)
 		x%=48000;
 		if(!x)
 		{
-			baseValue=-26764085;
+			baseValue=-26842726;
 		}*/
 		pSawtoothVlaue[y]=(short)(baseValue>>10);
 		baseValue+= deltAmplitudeValue;
@@ -125,7 +125,7 @@ void generateSawtooth_optimize(short *pSawtoothVlaue)
 	x%=48000;
 	if(!x)
 	{
-		baseValue=-26764085;
+		baseValue=-26842726;
 	}
 }
 /*************************************************************
@@ -137,7 +137,7 @@ void generate64BaseSawtooth(short *pSawtoothVlaue)
 	//int x=0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	int _baseValue = -26764085; //26213.6 *1024;
+	int _baseValue = -26842726;// -26764085; //26213.6 *1024;
 	int _deltAmplitudeValue = 1118;//1.0922333*1024;
 	int y=0;
 	
@@ -146,7 +146,7 @@ void generate64BaseSawtooth(short *pSawtoothVlaue)
 		x%=48000;
 		if(!x)
 		{
-			baseValue=-26764085;
+			baseValue=-26842726;
 		}*/
 		pSawtoothVlaue[y]=(short)(_baseValue>>10);
 		_baseValue+= _deltAmplitudeValue;
@@ -156,7 +156,7 @@ void generate64BaseSawtooth(short *pSawtoothVlaue)
 /*	x%=48000;
 	if(!x)
 	{
-		baseValue=-26764085;
+		baseValue=-26842726;
 	}*/
 }
 
@@ -165,7 +165,7 @@ void generateSawtooth_simple(short * pSawtoothVlaue,short *pFirst64Values)
 	static int x=0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	//static int baseValue = -26764085; //26213.6 *1024;
+	//static int baseValue = -26842726; //26213.6 *1024;
 	int deltAmplitudeValue = 70;//1.0922333*64=69.902912;
 	int y=0;
 	
@@ -187,7 +187,7 @@ void generateSawtooth_simple(short * pSawtoothVlaue,short *pFirst64Values)
 			x%=48000;
 			if(!x)
 			{
-				baseValue=-26764085;
+				baseValue=-26842726;
 			}*/
 			pSawtoothVlaue[y] += deltAmplitudeValue;
 			//baseValue+= deltAmplitudeValue;
@@ -207,7 +207,7 @@ void generate64BaseSawtooth(short* pSawtoothVlaue)
 	//int x=0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	int _baseValue = -26764085; //26213.6 *1024;
+	int _baseValue = -26842726; //26213.6 *1024;
 	int _deltAmplitudeValue = 1118;//1.0922333*1024;
 	int y = 0;
 
@@ -216,7 +216,7 @@ void generate64BaseSawtooth(short* pSawtoothVlaue)
 		x%=48000;
 		if(!x)
 		{
-			baseValue=-26764085;
+			baseValue=-26842726;
 		}*/
 		pSawtoothVlaue[y] = (short)(_baseValue >> 10);
 		_baseValue += _deltAmplitudeValue;
@@ -226,7 +226,7 @@ void generate64BaseSawtooth(short* pSawtoothVlaue)
 	/*	x%=48000;
 		if(!x)
 		{
-			baseValue=-26764085;
+			baseValue=-26842726;
 		}*/
 }
 
@@ -235,7 +235,7 @@ void generateSawtooth_simple(short* restrict pSawtoothVlaue, short* restrict pFi
 	static int x = 0;
 	//static short baseValue = -26213.6;
 	//float deltAmplitudeValue = 1.0922333;
-	//static int baseValue = -26764085; //26213.6 *1024;
+	//static int baseValue = -26842726; //26213.6 *1024;
 	int deltAmplitudeValue = 70;//1.0922333*64=69.902912;
 	int y = 0;
 
@@ -257,7 +257,7 @@ void generateSawtooth_simple(short* restrict pSawtoothVlaue, short* restrict pFi
 			x%=48000;
 			if(!x)
 			{
-				baseValue=-26764085;
+				baseValue=-26842726;
 			}*/
 			pSawtoothVlaue[y] += deltAmplitudeValue;
 			//baseValue+= deltAmplitudeValue;
